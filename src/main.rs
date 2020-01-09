@@ -67,6 +67,7 @@ fn main() -> io::Result<()> {
 
     let mut bismark_writer = WriterBuilder::new()
         .delimiter(b'\t')
+        .has_headers(false)
         .from_writer(&bismark_bed_file);
 
     let mut records = gembs_reader.deserialize::<Row>();
